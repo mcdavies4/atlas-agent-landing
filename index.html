@@ -203,7 +203,62 @@ footer {
   transition: border-color 0.3s, color 0.3s;
 }
 
-@keyframes fadeUp {
+/* CAPABILITIES */
+.capabilities {
+  padding: 72px 48px;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+.cap-inner { max-width: 900px; margin: 0 auto; }
+.cap-label {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px; font-family: 'Epilogue', sans-serif;
+  transition: color 0.3s;
+}
+.cap-title {
+  font-family: var(--serif); font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
+  margin-bottom: 48px; color: var(--text); transition: color 0.3s;
+}
+.cap-title em { font-style: italic; font-weight: 400; color: var(--muted); }
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.cap-card {
+  background: var(--surface);
+  padding: 28px 24px;
+  transition: background 0.2s;
+  cursor: default;
+}
+.cap-card:hover { background: var(--surface); filter: brightness(1.05); }
+.cap-card-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+.cap-card-title {
+  font-family: var(--serif); font-size: 17px; font-weight: 400;
+  margin-bottom: 8px; color: var(--text); transition: color 0.3s;
+}
+.cap-card-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.6;
+  font-weight: 300; transition: color 0.3s;
+}
+.cap-card-tag {
+  display: inline-block; margin-top: 12px;
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--wa); font-family: 'Epilogue', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .cap-grid { grid-template-columns: 1fr 1fr; }
+  .capabilities { padding: 48px 24px; }
+}
+@media (max-width: 480px) {
+  .cap-grid { grid-template-columns: 1fr; }
+}
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
@@ -280,6 +335,79 @@ footer {
       <div class="feature-desc">Know what to expect before you call</div>
     </div>
   </div>
+
+  <section class="capabilities">
+    <div class="cap-inner">
+      <div class="cap-label">What Atlas can do</div>
+      <h2 class="cap-title">More than just<br><em>finding a courier.</em></h2>
+      <div class="cap-grid">
+
+        <div class="cap-card">
+          <span class="cap-card-icon">🔍</span>
+          <div class="cap-card-title">Find Courier Companies</div>
+          <div class="cap-card-desc">Tell Atlas your pickup and dropoff. It searches the web and uses AI knowledge to find the best verified logistics companies in your city — with phone numbers and websites.</div>
+          <span class="cap-card-tag">Core feature</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">⭐</span>
+          <div class="cap-card-title">Ratings & Reviews</div>
+          <div class="cap-card-desc">Atlas summarises customer sentiment for each company so you know who to trust before you call. No more guessing from Google reviews.</div>
+          <span class="cap-card-tag">Smart search</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">💰</span>
+          <div class="cap-card-title">Price Comparison</div>
+          <div class="cap-card-desc">See estimated prices from multiple companies side by side. Say "show me cheapest" or "best rated" and Atlas re-sorts the list instantly.</div>
+          <span class="cap-card-tag">Compare</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">🗺️</span>
+          <div class="cap-card-title">Multi-Stop Delivery</div>
+          <div class="cap-card-desc">Need to pick up from multiple locations? Just describe your route and Atlas maps it out, then finds companies that handle multi-stop deliveries.</div>
+          <span class="cap-card-tag">Advanced</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">✈️</span>
+          <div class="cap-card-title">International Shipping</div>
+          <div class="cap-card-desc">Sending something to the UK, US, or anywhere outside Nigeria? Atlas finds DHL, FedEx, GIG Logistics and others — with transit times and customs tips.</div>
+          <span class="cap-card-tag">International</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">📅</span>
+          <div class="cap-card-title">Scheduled Pickups</div>
+          <div class="cap-card-desc">Need a pickup tomorrow at 10am or Friday afternoon? Atlas factors in your schedule and flags which companies offer advance booking.</div>
+          <span class="cap-card-tag">Scheduling</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">📍</span>
+          <div class="cap-card-title">Saved Addresses</div>
+          <div class="cap-card-desc">Save your frequently used locations — home, office, shop. Next time just say "send from office" and Atlas already knows where you mean.</div>
+          <span class="cap-card-tag">Personalised</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">🕐</span>
+          <div class="cap-card-title">Search History</div>
+          <div class="cap-card-desc">Atlas remembers your last 10 searches. Say "repeat last" to instantly redo your most recent delivery search without starting from scratch.</div>
+          <span class="cap-card-tag">Memory</span>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-card-icon">💡</span>
+          <div class="cap-card-title">Negotiation Tips</div>
+          <div class="cap-card-desc">Before you call, Atlas gives you practical tips — what to say, how to negotiate the price, and what information to have ready. Save money every time.</div>
+          <span class="cap-card-tag">Smart tips</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <section class="how">
     <h2 class="how-title">How it works</h2>
